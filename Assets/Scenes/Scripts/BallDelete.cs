@@ -3,10 +3,12 @@ using UnityEngine;
 public class BallDelete : MonoBehaviour
 {
     [SerializeField]
-    private float destroyHeight;
+    private float destroyTime;
     void Update()
     {
-        if (transform.position.y < destroyHeight)
+        destroyTime -= Time.deltaTime;
+
+        if (destroyTime < 0)
         {
             Destroy(gameObject);
         }

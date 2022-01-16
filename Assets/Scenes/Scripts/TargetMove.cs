@@ -21,7 +21,7 @@ public class TargetMove : MonoBehaviour
         }
         _rigidbody.MovePosition(transform.position + Vector3.right * Time.deltaTime * speed);
         
-        if (60 < transform.position.x)
+        if (20 < transform.position.x)
         {
             Destroy(gameObject);
         }

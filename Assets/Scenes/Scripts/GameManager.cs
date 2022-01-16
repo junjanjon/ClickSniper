@@ -28,8 +28,10 @@ namespace Scenes.Scripts
 
             if (targets[currentTargetIndex].time < 0)
             {
+                var y = UnityEngine.Random.Range(-4, 2);
+                var z = UnityEngine.Random.Range(2, 8);
                 Instantiate(targets[currentTargetIndex].prefab,
-                    new Vector3(-10, 0, 10),
+                    new Vector3(-25, y, z),
                     Quaternion.identity);
                 currentTargetIndex++;
             }

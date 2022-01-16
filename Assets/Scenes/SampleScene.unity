@@ -148,12 +148,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37458488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &37458490
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 4870130547164378155, guid: 7ed68cb0a6e7046d594d04060015121a, type: 3}
   power: 60
-  intervalTime: 2
+  intervalTime: 0.02
 --- !u!114 &37458491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +185,10 @@ MonoBehaviour:
   targets:
   - prefab: {fileID: 6005409549506480288, guid: cc9b2ec36078b4ff3b7429971d1b871a, type: 3}
     time: 0
+  - prefab: {fileID: 6005409549506480288, guid: cc9b2ec36078b4ff3b7429971d1b871a, type: 3}
+    time: 7
+  - prefab: {fileID: 6005409549506480288, guid: cc9b2ec36078b4ff3b7429971d1b871a, type: 3}
+    time: 7
 --- !u!1 &455343184
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455343184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1638286289}
@@ -455,7 +459,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 5
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -485,7 +489,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 37458489}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
