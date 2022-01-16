@@ -20,10 +20,5 @@ public class TargetMove : MonoBehaviour
             time -= Time.deltaTime;
         }
         _rigidbody.MovePosition(transform.position + Vector3.right * Time.deltaTime * speed);
-        
-        if (20 < transform.position.x)
-        {
-            Destroy(gameObject);
-        }
     }
 }
