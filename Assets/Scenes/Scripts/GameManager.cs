@@ -17,7 +17,7 @@ namespace Scenes.Scripts
             public float time;
         }
 
-        private int currentTargetIndex = 0;
+        private int _currentTargetIndex = 0;
         private float _gameTime = 30f;
 
         private void Start()
@@ -37,21 +37,21 @@ namespace Scenes.Scripts
                 GetComponent<BallShot>().enabled = false;
                 return;
             }
-            if (targets.Length <= currentTargetIndex)
+            if (targets.Length <= _currentTargetIndex)
             {
                 return;
             }
 
-            targets[currentTargetIndex].time -= Time.deltaTime;
+            targets[_currentTargetIndex].time -= Time.deltaTime;
 
-            if (targets[currentTargetIndex].time < 0)
+            if (targets[_currentTargetIndex].time < 0)
             {
                 var y = UnityEngine.Random.Range(-4, 2);
                 var z = UnityEngine.Random.Range(2, 8);
-                Instantiate(targets[currentTargetIndex].prefab,
+                Instantiate(targets[_currentTargetIndex].prefab,
                     new Vector3(-25, y, z),
                     Quaternion.identity);
-                currentTargetIndex++;
+                _currentTargetIndex++;
             }
         }
     }

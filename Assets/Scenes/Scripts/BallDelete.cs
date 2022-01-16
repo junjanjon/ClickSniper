@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class BallDelete : MonoBehaviour
+namespace Scenes.Scripts
 {
-    [SerializeField]
-    private float destroyTime;
-    void Update()
+    public class BallDelete : MonoBehaviour
     {
-        destroyTime -= Time.deltaTime;
-
-        if (destroyTime < 0)
+        [SerializeField]
+        private float destroyTime;
+        void Update()
         {
-            Destroy(gameObject);
+            destroyTime -= Time.deltaTime;
+
+            if (destroyTime < 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

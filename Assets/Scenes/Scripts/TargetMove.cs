@@ -1,24 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetMove : MonoBehaviour
+namespace Scenes.Scripts
 {
-    [SerializeField] private float speed = 1;
-    private Rigidbody _rigidbody;
-    private float time = 0.1f;
-    private void Start()
+    public class TargetMove : MonoBehaviour
     {
-        _rigidbody = gameObject.GetComponent<Rigidbody>();
-    }
-
-    void FixedUpdate()
-    {
-        if (0 < time)
+        [SerializeField] private float speed = 1;
+        private Rigidbody _rigidbody;
+        private float _time = 0.1f;
+        private void Start()
         {
-            time -= Time.deltaTime;
+            _rigidbody = gameObject.GetComponent<Rigidbody>();
         }
-        _rigidbody.MovePosition(transform.position + Vector3.right * Time.deltaTime * speed);
+
+        void FixedUpdate()
+        {
+            if (0 < _time)
+            {
+                _time -= Time.deltaTime;
+            }
+            _rigidbody.MovePosition(transform.position + Vector3.right * Time.deltaTime * speed);
+        }
     }
 }
