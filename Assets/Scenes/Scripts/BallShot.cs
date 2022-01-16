@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Debug = System.Diagnostics.Debug;
 
 public class BallShot : MonoBehaviour
@@ -21,6 +22,11 @@ public class BallShot : MonoBehaviour
         _time -= Time.deltaTime;
         if (_time < 0)
         {
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                return;
+            }
+
             if (Input.GetMouseButtonDown(MouseLeft))
             {
                 var ball = Instantiate(ballPrefab);
