@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Scenes.Scripts
 {
@@ -18,12 +20,20 @@ namespace Scenes.Scripts
         private int currentTargetIndex = 0;
         private float _gameTime = 30f;
 
+        private void Start()
+        {
+            GameObject.Find("RetryButton").GetComponent<Button>().onClick.AddListener(() =>
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            });
+        }
+
         private void Update()
         {
             _gameTime -= Time.deltaTime;
             if (_gameTime < 0)
             {
-                GameObject.Find("TimeUpText").GetComponent<UnityEngine.UI.Text>().enabled = true;
+                GameObject.Find("TimeUpText").GetComponent<Text>().enabled = true;
                 GetComponent<BallShot>().enabled = false;
                 return;
             }
