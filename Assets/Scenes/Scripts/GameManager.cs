@@ -16,9 +16,17 @@ namespace Scenes.Scripts
         }
 
         private int currentTargetIndex = 0;
+        private float _gameTime = 30f;
 
         private void Update()
         {
+            _gameTime -= Time.deltaTime;
+            if (_gameTime < 0)
+            {
+                GameObject.Find("TimeUpText").GetComponent<UnityEngine.UI.Text>().enabled = true;
+                GetComponent<BallShot>().enabled = false;
+                return;
+            }
             if (targets.Length <= currentTargetIndex)
             {
                 return;
