@@ -28,6 +28,12 @@ namespace Editor
                 target = BuildTarget.WebGL,
                 options = BuildOptions.None
             };
+            // https://docs.unity3d.com/2020.1/Documentation/Manual/webgl-deploying.html
+            // decompressionFallback は解凍できなかった場合に 未圧縮のゲームファイルを利用する設定。
+            // 圧縮ファイルのレスポンスヘッダーに `Content-Type` を設定することでブラウザで解凍ができる。
+            // github pages ではレスポンスヘッダーを設定できないため解凍ができない。
+            // そのため decompressionFallback を有効にしている。
+            PlayerSettings.WebGL.decompressionFallback = true;
             var report = BuildPipeline.BuildPlayer(options);
             var summary = report.summary;
             
